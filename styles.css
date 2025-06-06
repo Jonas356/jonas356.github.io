@@ -77,18 +77,18 @@ header {
   text-align: right;
   max-width: 100px;
   color: var(--negro);
-}
-
+ Luca para que el valor del IMC se calcule automáticamente
 .pregunta input[type="radio"] {
   flex: none;
   margin: 0 1rem;
-}
+}}
 
 .boton {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
   margin-top: 1rem;
+  flex-wrap: wrap; /* Permitir que los botones se apilen en pantallas pequeñas */
 }
 
 .boton button {
@@ -140,4 +140,83 @@ footer {
   text-align: center;
   margin-top: 2rem;
   font-weight: bold;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+  header {
+    font-size: 1.2rem; /* Reducir el tamaño del título en el encabezado */
+    padding: 0.8rem;
+  }
+
+  .intro {
+    font-size: 0.9rem; /* Reducir el tamaño del texto introductorio */
+    padding: 0.8rem;
+  }
+
+  .contenedor {
+    margin: 0.5rem; /* Reducir los márgenes laterales */
+    padding: 0.5rem;
+    max-width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+  }
+
+  .pregunta {
+    flex-direction: column; /* Apilar etiquetas y campos verticalmente */
+    align-items: flex-start;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .pregunta label {
+    font-size: 0.9rem;
+    flex: none; /* Evitar que la etiqueta crezca demasiado */
+    width: 100%; /* Ocupar todo el ancho */
+  }
+
+  .pregunta input,
+  .pregunta select {
+    flex: none;
+    width: 100%; /* Hacer que los inputs ocupen todo el ancho */
+    max-width: none; /* Eliminar el límite de ancho */
+    font-size: 1rem; /* Aumentar ligeramente el tamaño del texto para mejor legibilidad */
+    padding: 0.5rem;
+  }
+
+  .pregunta .imc-valor {
+    flex: none;
+    width: 100%;
+    text-align: left; /* Alinear a la izquierda para consistencia */
+    font-size: 1rem;
+  }
+
+  .pregunta input[type="radio"] {
+    margin: 0 0.5rem 0 0; /* Reducir el margen entre radios */
+  }
+
+  .boton {
+    flex-direction: column; /* Apilar botones verticalmente */
+    gap: 0.5rem;
+  }
+
+  .boton button {
+    width: 100%; /* Hacer que los botones ocupen todo el ancho */
+    padding: 0.7rem; /* Aumentar el padding para facilitar el toque */
+    font-size: 1rem; /* Aumentar el tamaño del texto */
+  }
+
+  .resultado,
+  .informe-medico {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .resultado h2,
+  .informe-medico h2 {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
 }
