@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Riesgo de Diabetes Tipo 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 class="titulo">CALCULADORA DE RIESGO DE DIABETES TIPO 2</h1>
+  </header>
+
+  <section class="intro">
+    <p>TEST PARA CONOCER TU RIESGO DE DESARROLLAR DIABETES TIPO 2</p>
+  </section>
+
+  <main class="contenedor sombra">
+    <form id="formDiabetes">
+      <div class="pregunta">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="pregunta">
+        <label for="ci">Cédula de Identidad (CI)</label>
+        <input type="text" id="ci" name="ci" required>
+      </div>
+
+      <div class="pregunta">
+        <label for="sexo">Sexo</label>
+        <select id="sexo" name="sexo" required>
+          <option value="" disabled selected>Seleccione una opción</option>
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" min="18" max="120" required>
+      </div>
+
+      <div class="pregunta">
+        <label for="peso">Peso (kg)</label>
+        <input type="number" id="peso" name="peso" step="0.1" required>
+      </div>
+
+      <div class="pregunta">
+        <label for="altura">Altura (cm)</label>
+        <input type="number" id="altura" name="altura" required>
+      </div>
+
+      <div class="pregunta">
+        <label>Índice de Masa Corporal (IMC)</label>
+        <span id="imc" class="imc-valor">-</span>
+      </div>
+
+      <div class="pregunta">
+        <label for="cintura">Perímetro de cintura (cm)</label>
+        <input type="number" id="cintura" name="cintura" required>
+      </div>
+
+      <div class="pregunta">
+        <label>¿Realiza ejercicio habitualmente?</label>
+        <input type="radio" id="actividad_si" name="actividad" value="0" required> Sí
+        <input type="radio" id="actividad_no" name="actividad" value="2"> No
+      </div>
+
+      <div class="pregunta">
+        <label>¿Come a diario frutas o verduras?</label>
+        <input type="radio" id="frutas_si" name="frutas" value="0" required> Sí
+        <input type="radio" id="frutas_no" name="frutas" value="1"> No
+      </div>
+
+      <div class="pregunta">
+        <label>¿Toma medicación para la hipertensión?</label>
+        <input type="radio" id="hipertension_no" name="hipertension" value="0" required> No
+        <input type="radio" id="hipertension_si" name="hipertension" value="5"> Sí
+      </div>
+
+      <div class="pregunta">
+        <label>¿Le han encontrado alguna vez valores de glucemia altos?</label>
+        <input type="radio" id="glucosa_no" name="glucosa" value="0" required> No
+        <input type="radio" id="glucosa_si" name="glucosa" value="5"> Sí
+      </div>
+
+      <div class="pregunta">
+        <label>¿Algún familiar está diagnosticado de diabetes?</label>
+        <input type="radio" id="familia_no" name="familia" value="0" required> No
+        <input type="radio" id="familia_lejanos" name="familia" value="3"> Sí (abuelos, tíos, primos)
+        <input type="radio" id="familia_cercanos" name="familia" value="5"> Sí (padres, hermanos, hijos)
+      </div>
+
+      <div class="boton">
+        <button type="button" onclick="document.getElementById('formDiabetes').reset(); document.getElementById('resultado').innerHTML = ''; document.getElementById('informeMedico').innerHTML = ''; document.getElementById('imc').textContent = '-';">Borrar los datos</button>
+        <button type="button" onclick="generarPDF()">Descargar Informe en PDF</button>
+        <button type="submit" id="calcularBtn">Calcular</button>
+        <button type="button" onclick="window.location.reload()">Cerrar</button>
+      </div>
+
+      <div id="resultado" class="resultado"></div>
+      <div id="informeMedico" class="informe-medico"></div>
+    </form>
+  </main>
+
+  <footer>
+    <p>Todos los derechos reservados por Jhonatan © 2025</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.22/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
