@@ -1,0 +1,154 @@
+:root {
+  --azul: #00722f;
+  --gris-claro: #f1f1f1;
+  --rojo: #cc0000;
+  --verde: #2e7d32;
+  --naranja: #f57c00;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --borde: #ccc;
+  --amarillo: #f4c430;
+  --gris-boton: #d3d3d3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(to bottom, var(--gris-claro) 0%, var(--azul-claro) 100%);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--gris-claro);
+  color: var(--negro);
+}
+
+header {
+  background: linear-gradient(135deg, var(--azul) 0%, #4fc3f7 100%);
+  color: var(--blanco);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.intro {
+  background-color: var(--blanco);
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--borde);
+}
+
+.contenedor {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: var(--blanco);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pregunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pregunta label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex: 2;
+  text-align: left;
+}
+
+.pregunta input,
+.pregunta select {
+  flex: 1;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  text-align: right;
+  max-width: 100px;
+}
+
+.pregunta .imc-valor {
+  flex: 1;
+  font-size: 0.9rem;
+  text-align: right;
+  max-width: 100px;
+  color: var(--negro);
+}
+
+.pregunta input[type="radio"] {
+  flex: none;
+  margin: 0 1rem;
+}
+
+.boton {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.boton button {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.boton button:hover {
+  background-color: var(--naranja);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.boton button[type="submit"] {
+  background-color: var(--amarillo);
+  color: var(--negro);
+}
+
+.boton button[type="submit"]:hover {
+  background-color: #ffb300;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.resultado,
+.informe-medico {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: var(--gris-claro);
+  border-left: 5px solid var(--azul);
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.resultado h2,
+.informe-medico h2 {
+  color: var(--azul);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+footer {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
